@@ -3,7 +3,10 @@ import { Company } from "./Compay"
 
 // instructions to every other class,on how they can be an argument to addMarker
 interface Mappable{
-
+    location:{
+        lat:number,
+        lng:number
+    }
 }
 
 export class CustomMap{
@@ -55,5 +58,14 @@ addMarker(mappable:User | Company):void{ //there is a gotcha around this or oper
 */
 
 //best code:
+addMarker(mappable:Mappable):void{
+    new google.maps.Marker({
+        map:this.googleMap,
+        position:{
+            lat:mappable.location.lat,
+            lng:mappable.location.lng
+        }
+    })
+}
 
 }
