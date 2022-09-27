@@ -1,0 +1,26 @@
+{
+  "name": "typescript-projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:build":"tsc -w",
+    "start:run":"nodemon build/index.js"
+    ,"start":"concurrently npm:start:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MHJahanbakhsh/typescript-projects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MHJahanbakhsh/typescript-projects/issues"
+  },
+  "homepage": "https://github.com/MHJahanbakhsh/typescript-projects#readme",
+  "dependencies": {
+    "concurrently": "^7.4.0",
+    "nodemon": "^2.0.20"
+  }
+}
