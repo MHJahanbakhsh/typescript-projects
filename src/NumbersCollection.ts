@@ -1,5 +1,6 @@
 // this class will extract the logic for sorting numbers
 
+
 export class NumbersCollection{
     constructor(public data:number[]){}
 

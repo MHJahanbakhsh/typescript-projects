@@ -1,7 +1,20 @@
 import { NumbersCollection } from "./NumbersCollection"
 
+interface Sortable{
+    length:number
+    compare(leftIndex:number, rightIndex:number):boolean
+    swap(leftIndex:number, rightIndex:number):void
+}
+/*
+the general idea is to make sorting easier for us ,in a sense that in order to make a 
+sorting algorithm for any data structure ;all we have to to is to figure out these three 
+methods on them
+*/
+
+
+
 export default class Sorter{
-    constructor(public collection:NumbersCollection/* :TODO fix me!!*/){}
+    constructor(public collection:Sortable){}
 
     //bubble sort algorithm
     sort():void{
