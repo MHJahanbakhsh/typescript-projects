@@ -1,7 +1,7 @@
-import { NumbersCollection } from "./NumbersCollection"
+import { NumbersCollection } from "./NumbersCollection";
 
 interface Sortable{
-    length:number
+    length:number //this could be a property or a getter!
     compare(leftIndex:number, rightIndex:number):boolean
     swap(leftIndex:number, rightIndex:number):void
 }

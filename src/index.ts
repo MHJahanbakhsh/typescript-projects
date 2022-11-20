@@ -1,6 +1,7 @@
 import Sorter from "./sorter"
 import { NumbersCollection } from "./NumbersCollection"
 import { CharactersCollection } from "./CharactersCollection"
+import { LinkedList } from "./LinkedList"
 
 /*
 //for numbers
@@ -13,7 +14,9 @@ console.log(numberColec)
 
 
 //for strings
+/*
 const charColec = new CharactersCollection('XskjdhdbXGFSDUGMPTZaddhaasddf')
 const sorter = new Sorter(charColec)
 sorter.sort()
 console.log(charColec.data)
+*/
