@@ -1,6 +1,6 @@
 class theNode {
     next:theNode | null = null
-    constructor(public data:Number){
+    constructor(public data:number){
 
     }
 }
@@ -8,7 +8,7 @@ class theNode {
 export class LinkedList{
     head:theNode | null = null
 
-    add(data:Number):void{ //when we have 
+    add(data:number):void{ //when we have 
         const node = new theNode(data)
         if(this.head){
             let current = this.head
@@ -21,7 +21,7 @@ export class LinkedList{
         }
     }
 
-    get length():Number{
+    get length():number{
         if(!this.head){
             return 0
         }else{
@@ -35,7 +35,7 @@ export class LinkedList{
         }
     }
 
-    at(index:Number):theNode{
+    at(index:number):theNode{
         if(!this.head) throw new Error('Index out of bounds!')
         let counter = 0
         let node  = this.head
@@ -72,7 +72,7 @@ export class LinkedList{
         else {
             let current:theNode | null = this.head;
             while(current){
-                console.log(current)
+                console.log(current.data)
                 current = current.next
             }
         }
@@ -82,9 +82,10 @@ export class LinkedList{
 const ll = new LinkedList()
 ll.add(10)
 ll.add(9)
-ll.add(8)
+ll.add(-8)
 ll.add(7)
+ll.add(12)
 // console.log(ll)
 // console.log(ll.length)
 // console.log(ll.at(2))
-ll.print()
+// ll.print()

@@ -20,3 +20,16 @@ const sorter = new Sorter(charColec)
 sorter.sort()
 console.log(charColec.data)
 */
+
+
+//for LinkedList
+const ll = new LinkedList()
+ll.add(-3)
+ll.add(45)
+ll.add(-35)
+ll.add(12)
+ll.add(4)
+ll.add(11)
+const sorter = new Sorter(ll)
+sorter.sort()
+ll.print()
