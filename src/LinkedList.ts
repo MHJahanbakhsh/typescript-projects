@@ -1,3 +1,5 @@
+import Sorter from "./sorter"
+
 class theNode {
     next:theNode | null = null
     constructor(public data:number){
@@ -5,7 +7,7 @@ class theNode {
     }
 }
 
-export class LinkedList{
+export class LinkedList extends Sorter{
     head:theNode | null = null
 
     add(data:number):void{ //when we have 

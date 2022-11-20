@@ -1,8 +1,10 @@
 // this class will extract the logic for sorting numbers
+import Sorter from "./sorter"
 
-
-export class NumbersCollection{
-    constructor(public data:number[]){}
+export class  NumbersCollection extends Sorter{
+    constructor(public data:number[]){
+        super()
+    }
 
     get length():number{
         return this.data.length
