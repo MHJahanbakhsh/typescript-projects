@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:build":"tsc -w",
-    "start:run":"nodemon build/index.js"
-    ,"start":"concurrently npm:start:*"
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/MHJahanbakhsh/typescript-projects#readme",
   "dependencies": {
+    "@types/node": "^18.11.9",
     "concurrently": "^7.4.0",
     "nodemon": "^2.0.20"
   }
