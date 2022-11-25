@@ -2,8 +2,12 @@ import fs from 'fs'
 import { dateStringToDate } from './utils'
 import { MatchResult } from './MatchResult'
 
+
+
+type matchData = [Date, string, string, number,number, MatchResult, string]  //tuple. order matters
+
 export class CsvFileReader{
-    data: string[][] = []
+    data: matchData[] = [] //we have array of tuples now. but the syntax is exactly like arrays
     constructor(public fileName:string){}
 
     read(){
@@ -14,7 +18,7 @@ export class CsvFileReader{
         //seperate each row to its own array
         .map(e=>e.split(','))
         //transform datatypes
-        .map((row:string[]):any=>{
+        .map((row:string[]):matchData =>{
             return [
                 dateStringToDate(row[0]),
                 row[1],

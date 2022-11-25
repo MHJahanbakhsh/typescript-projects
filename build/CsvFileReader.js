@@ -9,7 +9,7 @@ const utils_1 = require("./utils");
 class CsvFileReader {
     constructor(fileName) {
         this.fileName = fileName;
-        this.data = [];
+        this.data = []; //we have array of tuples now. but the syntax is exactly like arrays
     }
     read() {
         this.data = fs_1.default.readFileSync(this.fileName, {
