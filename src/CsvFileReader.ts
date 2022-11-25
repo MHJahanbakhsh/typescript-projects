@@ -1,14 +1,12 @@
 import fs from 'fs'
-import { dateStringToDate } from './utils'
-import { MatchResult } from './MatchResult'
 
 
 
-type matchData = [Date, string, string, number,number, MatchResult, string]  //tuple. order matters
 
-export class CsvFileReader{
-    data: matchData[] = [] //we have array of tuples now. but the syntax is exactly like arrays
-    constructor(public fileName:string){}
+export abstract class CsvFileReader<T>{
+    data: T[] = [] //we have array of tuples now. but the syntax is exactly like arrays
+    constructor(public fileName:string){} 
+    abstract mapRow(row:string[]):T
 
     read(){
         this.data = fs.readFileSync(this.fileName,{
@@ -18,17 +16,8 @@ export class CsvFileReader{
         //seperate each row to its own array
         .map(e=>e.split(','))
         //transform datatypes
-        .map((row:string[]):matchData =>{
-            return [
-                dateStringToDate(row[0]),
-                row[1],
-                row[2],
-                parseInt(row[3]),
-                parseInt(row[4]),
-                row[5] as MatchResult, //this is type assertion.when we as a developer owerwrite typescript default behaviour
-                row[6]
-            ]
-        })
+        .map(this.mapRow)
     
     }
+
 }
